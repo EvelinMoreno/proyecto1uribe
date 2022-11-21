@@ -30,6 +30,8 @@ public class Main {
         System.out.println("2. Registro de la fiesta");
         System.out.println("3. Registro de Invitado");
         System.out.println("4. Ver Invitados");
+        System.out.println("5. Ver COSTOS");
+        System.out.println("6. Ver GANANCIAS");
 
 
         do{
@@ -98,8 +100,20 @@ public class Main {
 
                     break;
 
+                case 5:
+                    System.out.println("El costo de la fiesta fue: "+objetoFiesta.calcularCostosTotales());
+                    break;
+
+                case 6:
+                    //llamar al metodo que calcula ganancias
+                    double ganancias=objetoFiesta.calcularGanancias(invitados.size());
+                    System.out.println("las ganancias fueron: "+ganancias);
+                    break;
+
                 default:
                     System.out.println("Selecciona una opcion valida");
+
+
 
             }
 

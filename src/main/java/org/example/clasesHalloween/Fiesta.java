@@ -87,4 +87,42 @@ public class Fiesta {
     public double getVALOR_ENTRADA() {
         return VALOR_ENTRADA;
     }
+
+
+    public double calcularCostosTotales(double iva){
+        double costos=this.costosAlimentos+this.costosBebidas+
+                this.costosEquipos+this.costosLugar;
+        //calcular el porcentaje del iva:
+        double valorIVACalculado=costos*iva;
+        //calcular el iva+costoinicial
+        double costosFinales=costos+valorIVACalculado;
+        return costosFinales;
+    }
+
+    public double calcularCostosTotales(){
+        double costos=this.costosAlimentos+this.costosBebidas+
+                this.costosEquipos+this.costosLugar;
+        return costos;
+    }
+
+    public double calcularGanancias(int numeroInvitados){
+
+        double gananciasBrutas=numeroInvitados*this.VALOR_ENTRADA;
+        double gastosTotales=this.calcularCostosTotales();
+        double gananciasNetas=gananciasBrutas-gastosTotales;
+
+        return gananciasNetas;
+
+    }
+
+    public double calcularGanancias(int numeroInvitados, double gastos){
+
+        double gananciasBrutas=numeroInvitados*this.VALOR_ENTRADA;
+        double gananciasNetas=gananciasBrutas-gastos;
+
+        return gananciasNetas;
+
+    }
+
+
 }
